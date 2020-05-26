@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF_TESTAPP.ViewModel;
 
 namespace WPF_TESTAPP
 {
@@ -23,6 +24,12 @@ namespace WPF_TESTAPP
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new Person()
+            {
+                Vorname = "Thomas",
+                Nachname = "Blasius"
+            };
         }
     }
 }

@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel>
+            <Label Content="{Binding Vorname}" Width="200" Height="25"/>
+            <Label Content="{Binding Nachname}" Width="200" Height="25"/>
+            <Label Content="{Binding Gesamtname}" Width="200" Height="25"/>
+        </StackPanel>
+
+
     </Grid>
 </Window>
