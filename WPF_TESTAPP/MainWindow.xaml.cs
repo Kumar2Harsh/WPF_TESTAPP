@@ -11,8 +11,10 @@ namespace WPF_TESTAPP
     public partial class MainWindow : Window
     {
         public SCSSdkTelemetry Telemetry;
-        public bool InvokeRequired { get; private set; }
+        public TruckViewModel TVM = new TruckViewModel();
 
+        public bool InvokeRequired { get; private set; }
+        public string PB = "Test3";
         public MainWindow()
         {
             InitializeComponent();
@@ -30,28 +32,23 @@ namespace WPF_TESTAPP
             Telemetry.RefuelEnd += TelemetryHandler.RefuelEnd;
             Telemetry.RefuelPayed += TelemetryHandler.RefuelPayed;
 
-     
-
         }
 
         public void Telemetry_Data(SCSTelemetry data, bool updated)
         {
-            try
+
+            if (!InvokeRequired)
             {
+            
+                    ((TruckViewModel)DataContext).AendereHersteller("TEST6");
 
-                if (!InvokeRequired)
-                {
-                    ((TruckViewModel)DataContext).Hersteller = data.TruckValues.ConstantsValues.Brand.ToString();
-
-                }
             }
-            catch
-            { }
         }
+            
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            ((TruckViewModel)DataContext).AendereHersteller("Thomas he Great");
+            ((TruckViewModel)DataContext).AendereHersteller(this.PB);
         }
     }
 }
