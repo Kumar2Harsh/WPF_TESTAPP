@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Telemetry.cs" />
     <Compile Include="TelemetryHandler.cs" />
     <Compile Include="ViewModel\Person.cs" />
     <Compile Include="ViewModel\TruckViewModel.cs" />
