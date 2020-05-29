@@ -1,17 +1,25 @@
 ﻿using System.Windows;
+using WPF_TESTAPP.ViewModel;
 using SCSSdkClient;
 using SCSSdkClient.Object;
-using WPF_TESTAPP.ViewModel;
 
 namespace WPF_TESTAPP
-{ 
+{
+    /// <summary>
+    /// Interaktionslogik für MainWindow.xaml
+    /// </summary>
     public partial class MainWindow : Window
     {
         public SCSSdkTelemetry Telemetry;
+        public TruckViewModel TVM = new TruckViewModel();
+
         public bool InvokeRequired { get; private set; }
+        public string PB = "Test3";
         public MainWindow()
         {
-            Telemetry = new SCSSdkTelemetry();
+            InitializeComponent();
+
+            this.Telemetry = new SCSSdkTelemetry();
             Telemetry.Data += Telemetry_Data;
             Telemetry.JobStarted += TelemetryHandler.JobStarted;
             Telemetry.JobCancelled += TelemetryHandler.JobCancelled;
@@ -23,23 +31,24 @@ namespace WPF_TESTAPP
             Telemetry.RefuelStart += TelemetryHandler.RefuelStart;
             Telemetry.RefuelEnd += TelemetryHandler.RefuelEnd;
             Telemetry.RefuelPayed += TelemetryHandler.RefuelPayed;
-            InitializeComponent();
 
         }
+
         public void Telemetry_Data(SCSTelemetry data, bool updated)
         {
-            try
+
+            if (!InvokeRequired)
             {
-                if (!InvokeRequired)
-                {
-                   // Here comes Data from DLL
-                }
+            
+                    ((TruckViewModel)DataContext).AendereHersteller("TEST6");
+
             }
-            catch
-            { }
         }
+            
 
-
-
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            ((TruckViewModel)DataContext).AendereHersteller(this.PB);
+        }
     }
 }

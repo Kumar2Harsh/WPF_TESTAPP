@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SCSSdkClient">
-      <HintPath>..\..\..\scs-sdk-plugin2\scs-client\C#\SCSSdkClient\bin\Debug\SCSSdkClient.dll</HintPath>
+      <HintPath>..\..\RenCloud\scs-sdk-plugin\scs-client\C#\SCSSdkClient\bin\Debug\SCSSdkClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
