@@ -35,8 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SCSSdkClient">
-      <HintPath>..\..\RenCloud\scs-sdk-plugin\scs-client\C#\SCSSdkClient\bin\Debug\SCSSdkClient.dll</HintPath>
+    <Reference Include="SCSSdkClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\scs-sdk-plugin2\scs-client\C#\SCSSdkClient\bin\Debug\SCSSdkClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -58,8 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Telemetry.cs" />
-    <Compile Include="TelemetryHandler.cs" />
+    <Compile Include="ViewModel\TelemetryHandler.cs" />
     <Compile Include="ViewModel\Person.cs" />
     <Compile Include="ViewModel\TruckViewModel.cs" />
     <Page Include="MainWindow.xaml">
