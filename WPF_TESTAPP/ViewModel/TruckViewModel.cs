@@ -1,14 +1,10 @@
-﻿using SCSSdkClient.Object;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows;
-using System.Windows.Interop;
 
 namespace WPF_TESTAPP.ViewModel
 {
     public class TruckViewModel : INotifyPropertyChanged
     {
-
         private string _hersteller;
 
         public string Hersteller 
@@ -20,12 +16,6 @@ namespace WPF_TESTAPP.ViewModel
                 OnPropertyChanged();
             }
         }
-        
-        public void AendereHersteller(string wert)
-        {
-           Hersteller = wert;
-        }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 

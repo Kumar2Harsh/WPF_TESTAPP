@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Windows;
+using WPF_TESTAPP.ViewModel;
 
 namespace WPF_TESTAPP
 {
-    public class TelemetryHandler
+    public class TelemetryHandler : Window
     {
+        
         public static void RefuelStart(object sender, EventArgs e)
         {
 
