@@ -11,7 +11,7 @@
     </Window.DataContext>
     <Grid>
         <StackPanel>
-            <TextBox Margin="50" Name="Test2Label" Text="{Binding Hersteller}" Width="200" Height="25"/>
+            <TextBox Margin="50" Name="Test2Label" Text="{Binding Path=Hersteller}" Width="200" Height="25"/>
             <Button x:Name="button" Content="Ändere Hersteller" Width="200" Height="30" Click="button_Click"/>
         </StackPanel>
 

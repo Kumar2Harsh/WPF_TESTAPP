@@ -7,12 +7,10 @@ using System.Windows;
 
 namespace WPF_TESTAPP.ViewModel
 {
-   
-
-    public class TruckViewModel : MainWindow, INotifyPropertyChanged
+    public class TruckViewModel : INotifyPropertyChanged
     {
         public SCSSdkTelemetry Telemetry;
-        public bool InvokeRequired { get; private set; }
+        public bool InvokeRequired { get; set; }
         
         public void Telemetry_Data(SCSTelemetry data, bool updated)
         {
@@ -34,7 +32,7 @@ namespace WPF_TESTAPP.ViewModel
             {
                 if (!InvokeRequired)
                 {
-                    Test2Label.Text = Hersteller;   
+                    this.Hersteller = data.TruckValues.ConstantsValues.BrandId;
                 }
             }
             catch { }

@@ -11,7 +11,9 @@ namespace WPF_TESTAPP
         public MainWindow()
         {
             InitializeComponent();
-    
+
+            TruckViewModel tb = new TruckViewModel();
+            ((TruckViewModel)DataContext).AendereHersteller(tb.Hersteller);
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
