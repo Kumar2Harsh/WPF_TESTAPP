@@ -1,12 +1,31 @@
 ﻿using System;
-using System.Windows;
-using WPF_TESTAPP.ViewModels;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace WPF_TESTAPP
+namespace WPF_TESTAPP.Classes
 {
-    public class TelemetryHandler : Window
+    class TelemetryHandler
     {
-        
+
+        public static bool IsETSRunning()
+        {
+            string procName = Process.GetCurrentProcess().ProcessName;
+            Process[] processes = Process.GetProcessesByName("Euro Truck Simulator 2");
+
+            if (processes.Length > 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
         public static void RefuelStart(object sender, EventArgs e)
         {
 
