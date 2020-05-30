@@ -1,20 +1,20 @@
-﻿using SCSSdkClient;
-using SCSSdkClient.Object;
-using System.ComponentModel;
-using System.Net.Http;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows;
+using SCSSdkClient;
+using SCSSdkClient.Object;
+using WPF_TESTAPP.Annotations;
 
-namespace WPF_TESTAPP.ViewModel
+namespace WPF_TESTAPP.Models
 {
-    public class TruckViewModel : INotifyPropertyChanged
+    public class TruckModel : INotifyPropertyChanged
     {
+        /*
+
         public SCSSdkTelemetry Telemetry;
         public bool InvokeRequired { get; set; }
-        
+
         public void Telemetry_Data(SCSTelemetry data, bool updated)
         {
-          
             Telemetry = new SCSSdkTelemetry();
             Telemetry.Data += Telemetry_Data;
             Telemetry.JobStarted += TelemetryHandler.JobStarted;
@@ -28,37 +28,37 @@ namespace WPF_TESTAPP.ViewModel
             Telemetry.RefuelEnd += TelemetryHandler.RefuelEnd;
             Telemetry.RefuelPayed += TelemetryHandler.RefuelPayed;
 
-            try
-            {
-                if (!InvokeRequired)
-                {
-                    this.Hersteller = data.TruckValues.ConstantsValues.BrandId;
-                }
-            }
-            catch { }
-        }
 
-        private string _hersteller;
-        public string Hersteller 
-        { 
-            get { return _hersteller; }
-            set
+            if (!InvokeRequired)
             {
-                _hersteller = value;
-                OnPropertyChanged();
+              
             }
         }
+        */
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
         }
 
-        public void AendereHersteller(string value)
+
+
+        private string _hersteller;
+
+        public string Hersteller
         {
-            Hersteller = value;
+            get { return _hersteller; }
+            set
+            {
+                if (_hersteller == value)
+                    return;
+                _hersteller = value;
+                OnPropertyChanged(nameof(Hersteller));
+            }
         }
     }
 }

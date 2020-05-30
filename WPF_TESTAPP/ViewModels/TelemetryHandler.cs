@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows;
-using WPF_TESTAPP.ViewModel;
+using WPF_TESTAPP.ViewModels;
 
 namespace WPF_TESTAPP
 {
