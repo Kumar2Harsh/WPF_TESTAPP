@@ -27,7 +27,8 @@ namespace WPF_TESTAPP.ViewModels
                 if (truckBrand == value)
                     return;
                 truckBrand = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(TruckBrand));
+                
             }
         }
 
